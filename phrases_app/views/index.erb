@@ -9,9 +9,15 @@
 	<form action="/input" method="post" enctype="multipart/form-data">
 	<label for:"file">Sentence:</label>
 	<input type='text' name='user_input'>
-</form>
+	</form>
 </p>
-<p><%= @content %> </p>
+<ul>
+<% @array.each do  |item| %>
+	<li><%= item %></li><button>Delete</button>
+	<% end %>
+</ul>
+
+
 
 <!--
 <form action="/input" method="post" enctype="multipart/form-data">
