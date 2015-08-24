@@ -2,4 +2,19 @@
 
 <p><%= @phrase %></p>
 
-<a action="/produce" method="post" enctype="multipart/form-data"><button>Press To Refresh</button></a>
+
+<a href="/index"><button>Refresh</button></a>
+
+<p>
+	<form action="/input" method="post" enctype="multipart/form-data">
+	<label for:"file">Sentence:</label>
+	<input type='text' name='user_input'>
+</form>
+</p>
+<p><%= @content %> </p>
+
+<!--
+<form action="/input" method="post" enctype="multipart/form-data">
+<button type="submit" name="name">Press To Refresh</button></form>
+
+-->

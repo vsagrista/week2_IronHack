@@ -1,19 +1,22 @@
 require "sinatra"
 require "sinatra/reloader"
 require_relative "./lib/iterate.rb"
+require "pry"
 
-
+array = Iterate.new
 
 get "/index" do 
-	phrases = Iterate.new(["I like beer.", "I play tennis.", "Travelling is my favourite activity."])
-	@phrase = phrases.new_iterate
 	
+	@phrase = array.new_iterate
 	erb :index
 end
 
 
 post "/input" do
 
-	erb :index
+    content = params[:user_input]
+    array.push_text(content)
+    redirect to("/index")
+
 
 end
