@@ -1,0 +1,12 @@
+p{
+	text-align: center;
+    background-color: #8EA59D;
+    font-size: 2em;
+    font-family: monospace;
+
+}
+
+p:nth-child(even){
+	
+	background-color: aquamarine;
+}
