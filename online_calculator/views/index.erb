@@ -1,13 +1,59 @@
 
 <p>Addition</p>
 
-<form action="/input" method="post" enctype="multipart/form-data">
+<form action="/addition" method="post" enctype="multipart/form-data">
 <label for:"file">Number 1:</label>
 <input type='text' name='addition1'>
 
 
-<form action="/input" method="post" enctype="multipart/form-data">
+<form action="/addition" method="post" enctype="multipart/form-data">
 <label for:"file">Number 2:</label>
 <input type='text' name='addition2'>
 <button type="submit" name="addition">Add numbers!</button></form>
 <p>Result:</p><%= @adding_result %>
+
+
+
+<p>Substraction</p>
+
+<form action="/substraction" method="post" enctype="multipart/form-data">
+<label for:"file">Number 1:</label>
+<input type='text' name='substraction1'>
+
+
+<form action="/substraction" method="post" enctype="multipart/form-data">
+<label for:"file">Number 2:</label>
+<input type='text' name='substraction2'>
+<button type="submit" name="substraction">Add numbers!</button></form>
+<p>Result:</p><%= @substraction_result %>
+
+
+
+
+<p>Multiplication</p>
+
+<form action="/multiplication" method="post" enctype="multipart/form-data">
+<label for:"file">Number 1:</label>
+<input type='text' name='multiplication1'>
+
+
+<form action="/multiplication" method="post" enctype="multipart/form-data">
+<label for:"file">Number 2:</label>
+<input type='text' name='multiplication2'>
+<button type="submit" name="multiplication">Add numbers!</button></form>
+<p>Result:</p><%= @multiplication_result %>
+
+
+
+<p>Division</p>
+
+<form action="/division" method="post" enctype="multipart/form-data">
+<label for:"file">Number 1:</label>
+<input type='text' name='division1'>
+
+
+<form action="/division" method="post" enctype="multipart/form-data">
+<label for:"file">Number 2:</label>
+<input type='text' name='division2'>
+<button type="submit" name="division">Add numbers!</button></form>
+<p>Result:</p><%= @division_result %>
