@@ -1,0 +1,10 @@
+<link rel="stylesheet" type="text/css" href="styles.css">
+<h1>Please Log On</h1>
+<form action="/logon" method="post" enctype="multipart/form-data">
+	<label for:"file">User name:</label>
+	<input type='text' name='user_name'><br>
+	<label for:"file">Password:</label>
+	<input type='text' name='user_password'><br>
+	<input type="submit">
+</form>
+<p><%= @repeat %></p>
