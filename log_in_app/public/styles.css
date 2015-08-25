@@ -6,3 +6,7 @@ form {
 	text-align:center;
 	display: block;
 }
+h2 {
+	display: inline-block;
+    margin-right: 2px;
+}
