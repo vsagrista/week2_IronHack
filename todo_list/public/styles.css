@@ -1,0 +1,17 @@
+
+h2 {
+	text-align: center
+}
+.list {
+	height: auto;
+    width: 40%;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+#todo{ 
+	background: red;
+}
+#done{
+	background: green;	
+}
+

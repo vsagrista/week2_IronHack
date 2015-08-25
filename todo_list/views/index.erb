@@ -5,12 +5,25 @@
 <label for:"file">Add task here:</label>
   <input type='text' name="task"><br>
 </form>
-<ul>
+<h2>Done tasks</h2>
+<ul class="list" id="todo">
 	<% if @list.length > 0  %>
 		<% @list.each_with_index do |thing_todo,index| %>
 			<form action="/remove_task" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="task_to_delete" value="<%=index%>">
 	  			<li> <%= thing_todo %> </li>
+	  		<input type='submit' name="delete" value="X">
+	  	</form>
+		<% end %>
+	<% end %>
+</ul>
+<h2>Completed tasks</h2>
+<ul class= "list" id="done">
+	<% if @completed.length > 0  %>
+		<% @completed.each_with_index do |done_thing,index| %>
+			<form action="/remove_task" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="done_task" value="<%=index%>">
+	  			<li> <%= done_thing %> </li>
 	  		<input type='submit' name="delete" value="X">
 	  	</form>
 		<% end %>
