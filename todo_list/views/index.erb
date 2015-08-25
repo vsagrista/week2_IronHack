@@ -12,7 +12,11 @@
 			<form action="/remove_task" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="task_to_delete" value="<%=index%>">
 	  			<li> <%= thing_todo %> </li>
-	  		<input type='submit' name="delete" value="X">
+	  		<input type='submit' name="delete" value="V">
+	  	</form>
+	    <form action="/remove_permanently" method="post" enctype="multipart/form-data">
+	  		<input type="hidden" name="delete_permanent" value="<%=index%>">
+	  		<input type='submit' name="force_delete" value="X">
 	  	</form>
 		<% end %>
 	<% end %>
@@ -21,10 +25,10 @@
 <ul class= "list" id="done">
 	<% if @completed.length > 0  %>
 		<% @completed.each_with_index do |done_thing,index| %>
-			<form action="/remove_task" method="post" enctype="multipart/form-data">
-				<input type="hidden" name="done_task" value="<%=index%>">
-	  			<li> <%= done_thing %> </li>
-	  		<input type='submit' name="delete" value="X">
+		<form action="/remove_permanently" method="post" enctype="multipart/form-data">
+	  		<input type="hidden" name="delete_permanent" value="<%=index%>">
+	  		  <li> <%= done_thing %> </li>
+	  		<input type='submit' name="force_delete" value="X">
 	  	</form>
 		<% end %>
 	<% end %>

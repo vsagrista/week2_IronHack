@@ -1,7 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
 require "pry"
-require_relative "./lib/storage.rb"
+#require_relative "./lib/storage.rb"
 
 
 list = []
@@ -27,3 +27,18 @@ post "/remove_task" do
 	completed.push(done_task)	
 	redirect to("/")
 end
+
+
+post "/remove_permanently" do 
+	index_task = params[:delete_permanent].to_i
+	if list.include?(list[index_task])
+	  task_to_remove = list[index_task]
+	  list.delete(task_to_remove)
+	else 
+		task_to_remove = completed[index_task]
+		completed.delete(task_to_remove)
+	end
+	redirect to("/")
+end
+
+
