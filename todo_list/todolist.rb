@@ -1,11 +1,12 @@
 require "sinatra"
 require "sinatra/reloader"
 require "pry"
-#require_relative "./lib/storage.rb"
+require_relative "./lib/storage.rb"
 
 
 list = []
 completed = []
+my_storage = Storage.new
 
 get "/" do 
 	@list = list
@@ -16,6 +17,7 @@ end
 post "/add_task" do 
 	task = params[:task]
 	list.push(task)
+	my_storage.push_task(task)
 	redirect to("/")
 end
 
