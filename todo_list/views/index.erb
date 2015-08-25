@@ -1,0 +1,19 @@
+<h1>Todo List</h1>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<form action="/add_task" method="post" enctype="multipart/form-data">
+<label for:"file">Add task here:</label>
+  <input type='text' name="task"><br>
+</form>
+<ul>
+	<% if @list.length > 0  %>
+		<% @list.each_with_index do |thing_todo,index| %>
+			<form action="/remove_task" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="task_to_delete" value="<%=index%>">
+	  			<li> <%= thing_todo %> </li>
+	  		<input type='submit' name="delete" value="X">
+	  	</form>
+		<% end %>
+	<% end %>
+</ul>
+	
