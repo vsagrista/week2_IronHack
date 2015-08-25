@@ -12,7 +12,8 @@ users = {"pepe"=>"pepep","juan"=>"juanp","manolo"=>"manolop"}
 
 get "/" do
 	if session[:user_key] && session[:user_key].length > 0
-		redirect to("/welcome")
+		#params[:user] = session[:user_key]
+		redirect to("/welcome/#{session[:user_key]}")
 	end
 
 	erb :index
@@ -29,7 +30,7 @@ post "/logon" do
   
   if user_password == password_array
 		session[:user_key] = user_name 
-  	redirect to("/welcome")
+		redirect to("/welcome/#{session[:user_key]}")
   else 
   	@repeat = "Password was wrong, please try again."
   	
@@ -38,14 +39,15 @@ post "/logon" do
 
 end
 
-get "/welcome" do
-	
-	 	erb :welcome
-	
-end
 
 
 post "/delete_cookie" do 
 	session[:user_key].clear
 	redirect to("/")
+end
+
+get "/welcome/:user" do
+	 
+	 	erb :welcome
+	
 end
