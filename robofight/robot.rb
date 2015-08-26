@@ -3,7 +3,7 @@ require_relative "./attack.rb"
 require_relative "./referee.rb"
 
 class Robot
-
+@@counter = 0
 	attr_accessor  :current_attack
 	def initialize
 		#@points = 100
@@ -18,12 +18,14 @@ class Robot
 	end
 
 	def ask_attack
-		
-		puts "Select an attack!"
+		player = 1
+		@@counter += 1
+		@@counter.even? ? player = 2 : player = 1
+		puts "Select an attack player #{player}!"
 		user_input = gets.chomp
 		current_attack = @attacks.select { |attack| attack.name == user_input }.first
 		Referee.new(current_attack.damage)
-		#binding.pry
+		
 	end
 end
 

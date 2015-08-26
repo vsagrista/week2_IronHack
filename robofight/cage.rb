@@ -6,6 +6,7 @@ require_relative "./robot.rb"
 class Cage
 	def initilize(fight)
 		@fight = fight
+        
 	end
 
     def continue_playing

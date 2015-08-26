@@ -1,10 +1,12 @@
 
 
 class Referee	
-
+attr_accessor :counter
 @@historic_score = [0,0]
 @@counter = 0
 @@temp_points = 0
+@@player1 = 100
+@@player2 = 100
 
 	def initialize(attack)
 		@@counter += 1
@@ -13,8 +15,6 @@ class Referee
 	end
     def which_player
     	if @@counter.even? #player 2
-    		puts @@temp_points
-    		#@@historic_score[1] = @attack
     		calculate_points(@@temp_points,@attack)
     	else 
     		@@temp_points = @attack
@@ -22,7 +22,6 @@ class Referee
     end
 
     def calculate_points(pointsp1,pointsp2)
-    	#binding.pry
     	if pointsp1 == 10 && pointsp2 == 10
     		true
     	elsif pointsp1 == 20 && pointsp2 == 20
@@ -48,8 +47,14 @@ class Referee
     		
 
     def show_score
-    	puts "Player 1:#{@@historic_score[0]} points, Player 2: #{@@historic_score[1]}"
+        if @@historic_score[0] >= 100
+            puts "Player 2 won!!"
+            return
+        elsif @@historic_score[1] >= 100
+            puts "Player 1 won!!"
+            return
+        end
+    	puts "Player 1:#{@@player1 - @@historic_score[0]} lives, Player 2: #{@@player2 - @@historic_score[1]} lives"
     	Robot.new.ask_attack
-
     end
 end
