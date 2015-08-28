@@ -1,5 +1,6 @@
 class Neighbors
 attr_accessor :grid
+
 @@grid = 
 	 [[1,1,0,0,1,0,0,0,1],   	#0
 	  [0,1,0,0,1,0,0,0,0],		#1 
@@ -16,7 +17,6 @@ attr_accessor :grid
 	end
 
 	def check_neighbors(y,x)
-		puts @@grid[y][x]
 		if y > 0 && y <=8
 			neighborNW = @@grid[y-1][x-1]
 			neighborN =  @@grid[y-1][x]
@@ -56,6 +56,7 @@ attr_accessor :grid
 			if x > 0 && neighborW == 1
 				@neighbors_alive += 1
 			end
+
 			return @neighbors_alive	
 	end
 end
