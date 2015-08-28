@@ -1,0 +1,26 @@
+
+body {
+	background: rgba(212, 217, 218, 0.12)
+}
+form {
+	margin-top: 220px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-family: monospace;
+}
+
+.img_wrapper {
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+img {
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+}
+
+input {border: 2px solid black;
+    width: 200px;
+    height: 30px;}

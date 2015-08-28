@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<html>
+<body>
+	<div class="img_wrapper">
+		<form action="/search_keyword" method="post" enctype="multipart/form-data">
+			<label for:"file">Search for a movie:</label>
+		  <input type='text' name="keyword"><br>
+		</form>
+		<% if @posters != nil%>
+			<% @posters.each do |frontpage|  %>
+				<img src="<%=frontpage%>" height="50px" width="50px">
+			<% end %>
+		<% end %>
+	</div>
+</body>
