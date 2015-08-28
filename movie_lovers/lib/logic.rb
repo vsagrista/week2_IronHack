@@ -5,7 +5,6 @@ require "pry"
 class Movie
 attr_accessor :posters
 	def initialize
-		@array = []
 		@posters = []
 	end
 	def get_movies_by_keyword(keyword)
