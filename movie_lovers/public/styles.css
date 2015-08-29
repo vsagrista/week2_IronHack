@@ -3,7 +3,7 @@ body {
 	background: rgba(212, 217, 218, 0.12)
 }
 form {
-	margin-top: 220px;
+	margin-top: 120px;
     margin-bottom: 40px;
     font-size: 2em;
     font-family: monospace;
@@ -16,11 +16,37 @@ form {
 }
 
 img {
-	width: 120px;
-	height: 120px;
+	width: 280px;
+	height: 280px;
 	margin: 0 auto;
 }
 
 input {border: 2px solid black;
     width: 200px;
     height: 30px;}
+
+.question_form {
+	margin-top: 0;
+	width: 130px;
+	height: 150px;
+	display: inline;
+	text-align: center;
+   }
+
+button {
+	background-color: #A2BDA8;
+    border-radius: 10px;
+    height: 30px;
+    font-family: monospace;
+}
+
+.form_button_wrapper{
+	height: 340px;
+	width: 340px;
+	position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+
