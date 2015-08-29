@@ -3,19 +3,21 @@ require "imdb"
 require "pry"
 
 class Movie
-attr_accessor :posters
+attr_accessor :movies
 	def initialize
-		@posters = []
+		@movies = []
 	end
 	def get_movies_by_keyword(keyword)
 		list = Imdb::Search.new(keyword)
-		list.movies.each do |movie,poster|
+		list.movies.each do |movie|
 			if movie.poster != nil
-        @posters << movie.poster
+        @movies << movie
       end
-        break if @posters.length == 9
+        break if @movies.length == 9
       end
-		@posters
+		@movies
+
 	end
 end
+
 
