@@ -11,10 +11,21 @@
 			<label for:"file">Search for a movie:</label>
 		  <input type='text' name="keyword"><br>
 		</form>
-		<% if @posters != nil%>
-			<% @posters.each do |frontpage|  %>
-				<img src="<%=frontpage%>" height="50px" width="50px">
+		<% if @movies != nil%>
+			<% @movies.each do |movie,poster|  %>
+				<form class="question_form" action="/answer" method="post" enctype="multipart/form-data">
+					<div class="form_button_wrapper">
+						<img src="<%=movie.poster%>" height="50px" width="50px">
+						<input type="hidden" name="answer">
+						<button type="submit">Select Movie</button>
+					</div>
+				</form>
+				
+				
 			<% end %>
+
+			
 		<% end %>
+
 	</div>
 </body>
