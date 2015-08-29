@@ -11,6 +11,6 @@ end
 
 post "/search_keyword" do 
 	keyword = params[:keyword]
-	@posters = Movie.new.get_movies_by_keyword(keyword)
+	@movies = Movie.new.get_movies_by_keyword(keyword)
 	erb :index
 end
