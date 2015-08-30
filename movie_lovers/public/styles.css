@@ -59,4 +59,11 @@ button {
     font-family: monospace;
 }
 
+.congrats {
+	margin-top: 15%;
+    text-align: center;
+    font-size: 3em;
+    font-family: monospace;
+}
+
 
