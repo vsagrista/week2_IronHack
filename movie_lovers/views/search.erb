@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<html>
+<body>
+	<div class="img_wrapper">
+		<p id="question"><%= @question %></p>
+		<form action="/search_keyword" method="get" enctype="multipart/form-data">
+			<label for:"file">Search for a movie:</label>
+		  <input type='text' name="keyword"><br>
+		</form>
+		<% if @movies != nil%>
+			<% @movies.each do |movie,poster|  %>
+					<div class="form_button_wrapper">
+						<% if movie.year == @sample_date%>
+						<form action="/correct_answer" method="get" enctype="multipart/form-data">
+							<img src="<%=movie.poster%>" height="50px" width="50px">
+							<button type="submit" onClick="alert('Correct!')">Select Movie</button>
+						</form>
+						<% else %>
+							<img src="<%=movie.poster%>" height="50px" width="50px">
+							<input type="hidden" name="movie">
+							<button type="submit" onClick="alert('Incorrect!')">Select Movie</button>
+						<% end %>
+					</div>
+			<% end %>
+		<% end %>
+	</div>
+</body>
