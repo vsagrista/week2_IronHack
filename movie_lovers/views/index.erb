@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css">
@@ -13,16 +14,13 @@
 		</form>
 		<% if @movies != nil%>
 			<% @movies.each do |movie,poster|  %>
+				<form class="question_form" action="/answer" method="post" enctype="multipart/form-data">
 					<div class="form_button_wrapper">
-						<% if movie.year == @sample_date%>
-							<img src="<%=movie.poster%>" height="50px" width="50px">
-							<button type="submit" onClick="alert('Correct!')">Select Movie</button>
-						<% else %>
-							<img src="<%=movie.poster%>" height="50px" width="50px">
-							<input type="hidden" name="movie">
-							<button type="submit" onClick="alert('Incorrect!')">Select Movie</button>
-						<% end %>
+						<img src="<%=movie.poster%>" height="50px" width="50px">
+						<input type="hidden" name="answer">
+						<button type="submit">Select Movie</button>
 					</div>
+				</form>	
 			<% end %>
 		<% end %>
 	</div>
