@@ -3,7 +3,7 @@ body {
 	background: rgba(212, 217, 218, 0.12)
 }
 form {
-	margin-top: 120px;
+	
     margin-bottom: 40px;
     font-size: 2em;
     font-family: monospace;
@@ -48,5 +48,15 @@ button {
     margin: 0 auto;
 }
 
+#question {
+	background: #8DA085;
+	border: 2px solid black;
+	margin-top: 60px;
+    margin-bottom: 20px;
+    margin-bottom: -20px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    font-family: monospace;
+}
 
 
