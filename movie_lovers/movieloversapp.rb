@@ -3,10 +3,11 @@ require "sinatra"
 require "sinatra/reloader"
 require "pry"
 require_relative "./lib/logic.rb"
-enable :sessions
 
-keyword = ""
-random_array = [0,1,2]
+question_number = [0,1,2,3,4,5,6,7,8]
+movie_object = nil
+questions = Question.new
+
 
 get "/" do 
 	@question = "Let's see how much you know about movies..."
@@ -16,21 +17,23 @@ end
 post "/search_keyword" do 
 	keyword = params[:keyword]
 	@movies = Movie.new.get_movies_by_keyword(keyword)
-	random_array_sample = random_array.sample
-	random_array.delete(random_array_sample)
-	@sample_date = @movies[random_array_sample].year
-	@question = "Which movie was filmed in #{@sample_date}?"
+	movie_object = @movies
+	redirect to("answers")
+end
+
+get "/answers" do 
+	sample_number = question_number.sample
+	question_number.delete(sample_number)
+	@sample_writer = movie_object[sample_number].writers
+	@question = questions.get_random_question(movie_object,sample_number)
+	@movies = movie_object
+	if question_number.length == 0
+		redirect to("/congrats")
+    end
 	erb :search
 end
 
-get "/correct_answer" do 
-	@movies = Movie.new.get_movies_by_keyword(keyword)
-	random_array_sample = random_array.sample
-	@sample_date = @movies[random_array_sample].year
-	@question = "Which movie was filmed in #{@sample_date}?"
-	random_array.delete(random_array_sample)
-	if random_array.length == 0
-		@question = "Wow! You answered them all right, congrats!"
-	end
-	erb :search
+get "/congrats" do 
+	erb :congrats
 end
+
