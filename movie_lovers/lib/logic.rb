@@ -11,13 +11,10 @@ attr_accessor :movies
 		list = Imdb::Search.new(keyword)
 		list.movies.each do |movie|
 			if movie.poster != nil
-        @movies << movie
-      end
-        break if @movies.length == 9
-      end
+       		 @movies << movie
+      		end
+        	break if @movies.length == 9
+      	end
 		@movies
-
 	end
 end
-
-
